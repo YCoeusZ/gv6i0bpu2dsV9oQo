@@ -1,19 +1,21 @@
 import pandas as pd 
 import numpy as np 
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 from typing import Union
 
 class BowRanker: 
     def __init__(
                 self, 
-                tfidf_kwargs: dict,
+                tfidf_kwargs: Union[dict,None]=None,
                 sublinear_tf: bool=True, 
                 use_idf: bool=True, 
                 smooth_idf=True, 
                 stop_word: str="english"
                 ):
-        self.vectorizer= TfidfVectorizer(norm="l2", sublinear_tf=sublinear_tf, use_idf=use_idf, smooth_idf=smooth_idf, stop_words=stop_word, **tfidf_kwargs)
+        if not tfidf_kwargs is None: 
+            self.vectorizer= TfidfVectorizer(norm="l2", sublinear_tf=sublinear_tf, use_idf=use_idf, smooth_idf=smooth_idf, stop_words=stop_word, **tfidf_kwargs)
+        else: 
+            self.vectorizer= TfidfVectorizer(norm="l2", sublinear_tf=sublinear_tf, use_idf=use_idf, smooth_idf=smooth_idf, stop_words=stop_word)
         pass
     
     def fit(
