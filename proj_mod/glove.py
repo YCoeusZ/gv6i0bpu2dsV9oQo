@@ -49,7 +49,7 @@ class GloVeRanker:
             return None
     
     def _sent_weighted_mean(self, 
-                            tokens: str, 
+                            tokens: list, 
                             weights): 
         num=np.zeros(self.emb_dim_, dtype=np.float32)
         den=0
