@@ -18,7 +18,7 @@ For each candidate, we are provided with the following features
 ### Python packages 
 * pandas 
 * numpy 
-* sklearn (For tf-idf)
+* sklearn (For TF-IDF)
 * gensim (For training the Word2Vec and the FastText models, and loading the pre-trained GloVe model) 
 * sentence_transformer (For loading the pre-trained SBert model) 
 
@@ -41,4 +41,4 @@ This task is unsupervised in the sense that there is no pre-determined "target" 
 All evaluation method requires some further outside engagement, and some suggested common method can be seen in [this linked document](/note_books/suggested_metrics.ipynb). 
 
 ## Future
-For now, the ranking only relies on the "job_title" feature, it might some worth effort to look into utilizing otherwise features (e.g. calculate geographic distance according to "location" feature, and have that impact the results as well). 
+For now, the ranking only relies on the "job_title" feature, it might worth some effort to look into utilizing otherwise features (e.g. calculate geographic distance according to "location" feature, and have that impact the results as well). 
